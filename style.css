@@ -53,6 +53,7 @@ button {
   background-color: var(--blue2);
   color: var(--blue5);
   margin-bottom: 40px;
+  user-select: none;
 }
 
 .searching {
