@@ -42,21 +42,26 @@ function btnChange(state) {
 }
 
 function displayData(data) {
+    console.log(data.records);
     let sortedRecords = [...data.records];
     sortedRecords.sort((a, b) => {
         let result = ((a.fields.fmicourante / a.fields.fmizonmax) - (b.fields.fmicourante / b.fields.fmizonmax)) * -1
-        console.log(result);
         return result
     })
     sortedRecords.forEach((record, index) => {
+        let current = 0;
+        if (record.fields.fmicourante > 0) current = record.fields.fmicourante;
+
         const currentPlace = places[index];
         const name = currentPlace.childNodes[1];
         name.textContent = `${record.fields.etablissement_etalib} (${record.fields.fmizonlib}) : `
         const info = currentPlace.childNodes[3];
-        info.textContent = `${record.fields.fmicourante} / ${record.fields.fmizonmax}`
+        info.textContent = `${current} / ${record.fields.fmizonmax}`
         record.fields.datemiseajour
 
-        const ratio = (record.fields.fmicourante / record.fields.fmizonmax);
+
+        let ratio = (current / record.fields.fmizonmax);
+
         visitors[index].style.transform = `scaleX(${ratio})`
     })
 }
