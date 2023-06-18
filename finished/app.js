@@ -23,7 +23,6 @@ async function fetchData() {
         btnChange()
         errorMsg.textContent = `${error}`
     }
-
 }
 
 function onRefresh(e) {
@@ -58,7 +57,6 @@ function displayData(data) {
         const info = currentPlace.childNodes[3];
         info.textContent = `${current} / ${record.fields.fmizonmax}`
         record.fields.datemiseajour
-
 
         let ratio = (current / record.fields.fmizonmax);
 

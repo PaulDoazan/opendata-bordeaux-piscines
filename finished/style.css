@@ -72,6 +72,8 @@ button:hover {
 .errorMsg {
   text-align: center;
   font-size: 20px;
+  margin-bottom: 30px;
+  color: red;
 }
 
 .place {
@@ -101,8 +103,8 @@ button:hover {
   top: 4px;
   left: 4px;
   height: 22px;
-  width: 98%; 
-  transform : scaleX(0.01);
+  width: 1%; 
+  transform : scaleX(1);
   transform-origin: left;
   transition: transform 3s ease-in-out;
   background-color: var(--blue5);
